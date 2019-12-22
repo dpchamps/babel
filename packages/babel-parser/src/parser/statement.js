@@ -651,7 +651,7 @@ export default class StatementParser extends ExpressionParser {
     node.block = this.parseBlock();
     node.handler = null;
 
-    if (this.match(tt._catch)) {
+    const parseCatchHandleClause = () => {
       const clause = this.startNode();
       this.next();
       if (this.match(tt.parenL)) {
@@ -666,6 +666,12 @@ export default class StatementParser extends ExpressionParser {
         this.scope.enter(SCOPE_OTHER);
       }
 
+      return clause;
+    };
+
+    if (this.match(tt._catch)) {
+      const clause = parseCatchHandleClause();
+
       clause.body =
         // For the smartPipelines plugin: Disable topic references from outer
         // contexts within the function body. They are permitted in function
@@ -678,6 +684,13 @@ export default class StatementParser extends ExpressionParser {
       this.scope.exit();
 
       node.handler = this.finishNode(clause, "CatchClause");
+    } else if (this.match(tt.handle)) {
+      const clause = parseCatchHandleClause();
+
+      clause.body = this.parseBlock(false, true);
+      this.scope.exit();
+
+      node.handler = this.finishNode(clause, "HandleClause");
     }
 
     node.finalizer = this.eat(tt._finally) ? this.parseBlock() : null;

@@ -194,4 +194,7 @@ export const types: { [name: string]: TokenType } = {
   _typeof: createKeyword("typeof", { beforeExpr, prefix, startsExpr }),
   _void: createKeyword("void", { beforeExpr, prefix, startsExpr }),
   _delete: createKeyword("delete", { beforeExpr, prefix, startsExpr }),
+  perform: createKeyword("perform", { prefix }),
+  handle: createKeyword("handle"),
+  resume: createKeyword("resume", { prefix }),
 };

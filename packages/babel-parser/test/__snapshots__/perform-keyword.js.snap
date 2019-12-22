@@ -1,0 +1,632 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`perform keyword Should parse 1`] = `
+Node {
+  "comments": Array [],
+  "end": 62,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 4,
+      "line": 5,
+    },
+    "start": Position {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "async": false,
+        "body": Node {
+          "body": Array [
+            Node {
+              "end": 49,
+              "expression": Node {
+                "argument": Node {
+                  "arguments": Array [],
+                  "callee": Node {
+                    "end": 46,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 22,
+                        "line": 3,
+                      },
+                      "identifierName": "Effect",
+                      "start": Position {
+                        "column": 16,
+                        "line": 3,
+                      },
+                    },
+                    "name": "Effect",
+                    "start": 40,
+                    "type": "Identifier",
+                  },
+                  "end": 48,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 24,
+                      "line": 3,
+                    },
+                    "start": Position {
+                      "column": 16,
+                      "line": 3,
+                    },
+                  },
+                  "start": 40,
+                  "type": "CallExpression",
+                },
+                "end": 48,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 24,
+                    "line": 3,
+                  },
+                  "start": Position {
+                    "column": 8,
+                    "line": 3,
+                  },
+                },
+                "operator": "perform",
+                "prefix": true,
+                "start": 32,
+                "type": "UnaryExpression",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 25,
+                  "line": 3,
+                },
+                "start": Position {
+                  "column": 8,
+                  "line": 3,
+                },
+              },
+              "start": 32,
+              "type": "ExpressionStatement",
+            },
+          ],
+          "directives": Array [],
+          "end": 57,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 7,
+              "line": 4,
+            },
+            "start": Position {
+              "column": 21,
+              "line": 2,
+            },
+          },
+          "start": 22,
+          "type": "BlockStatement",
+        },
+        "end": 57,
+        "generator": false,
+        "id": Node {
+          "end": 20,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 19,
+              "line": 2,
+            },
+            "identifierName": "main",
+            "start": Position {
+              "column": 15,
+              "line": 2,
+            },
+          },
+          "name": "main",
+          "start": 16,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 7,
+            "line": 4,
+          },
+          "start": Position {
+            "column": 6,
+            "line": 2,
+          },
+        },
+        "params": Array [],
+        "start": 7,
+        "type": "FunctionDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 62,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 4,
+        "line": 5,
+      },
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`resume/with keywords Should parse 1`] = `
+Node {
+  "comments": Array [],
+  "end": 88,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 4,
+      "line": 6,
+    },
+    "start": Position {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "async": false,
+        "body": Node {
+          "body": Array [
+            Node {
+              "end": 54,
+              "expression": Node {
+                "argument": Node {
+                  "end": 52,
+                  "extra": Object {
+                    "parenStart": 42,
+                    "parenthesized": true,
+                  },
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 25,
+                      "line": 3,
+                    },
+                    "start": Position {
+                      "column": 16,
+                      "line": 3,
+                    },
+                  },
+                  "properties": Array [
+                    Node {
+                      "computed": false,
+                      "end": 51,
+                      "key": Node {
+                        "end": 45,
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 18,
+                            "line": 3,
+                          },
+                          "identifierName": "a",
+                          "start": Position {
+                            "column": 17,
+                            "line": 3,
+                          },
+                        },
+                        "name": "a",
+                        "start": 44,
+                        "type": "Identifier",
+                      },
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 24,
+                          "line": 3,
+                        },
+                        "start": Position {
+                          "column": 17,
+                          "line": 3,
+                        },
+                      },
+                      "method": false,
+                      "shorthand": false,
+                      "start": 44,
+                      "type": "ObjectProperty",
+                      "value": Node {
+                        "end": 51,
+                        "extra": Object {
+                          "raw": "'a'",
+                          "rawValue": "a",
+                        },
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 24,
+                            "line": 3,
+                          },
+                          "start": Position {
+                            "column": 21,
+                            "line": 3,
+                          },
+                        },
+                        "start": 48,
+                        "type": "StringLiteral",
+                        "value": "a",
+                      },
+                    },
+                  ],
+                  "start": 43,
+                  "type": "ObjectExpression",
+                },
+                "end": 53,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 26,
+                    "line": 3,
+                  },
+                  "start": Position {
+                    "column": 8,
+                    "line": 3,
+                  },
+                },
+                "operator": "resume",
+                "prefix": true,
+                "start": 35,
+                "type": "UnaryExpression",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 27,
+                  "line": 3,
+                },
+                "start": Position {
+                  "column": 8,
+                  "line": 3,
+                },
+              },
+              "start": 35,
+              "type": "ExpressionStatement",
+            },
+            Node {
+              "end": 75,
+              "expression": Node {
+                "argument": Node {
+                  "end": 74,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 19,
+                      "line": 4,
+                    },
+                    "start": Position {
+                      "column": 15,
+                      "line": 4,
+                    },
+                  },
+                  "start": 70,
+                  "type": "BooleanLiteral",
+                  "value": true,
+                },
+                "end": 74,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 19,
+                    "line": 4,
+                  },
+                  "start": Position {
+                    "column": 8,
+                    "line": 4,
+                  },
+                },
+                "operator": "resume",
+                "prefix": true,
+                "start": 63,
+                "type": "UnaryExpression",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 20,
+                  "line": 4,
+                },
+                "start": Position {
+                  "column": 8,
+                  "line": 4,
+                },
+              },
+              "start": 63,
+              "type": "ExpressionStatement",
+            },
+          ],
+          "directives": Array [],
+          "end": 83,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 7,
+              "line": 5,
+            },
+            "start": Position {
+              "column": 24,
+              "line": 2,
+            },
+          },
+          "start": 25,
+          "type": "BlockStatement",
+        },
+        "end": 83,
+        "generator": false,
+        "id": Node {
+          "end": 23,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 22,
+              "line": 2,
+            },
+            "identifierName": "handler",
+            "start": Position {
+              "column": 15,
+              "line": 2,
+            },
+          },
+          "name": "handler",
+          "start": 16,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 7,
+            "line": 5,
+          },
+          "start": Position {
+            "column": 6,
+            "line": 2,
+          },
+        },
+        "params": Array [],
+        "start": 7,
+        "type": "FunctionDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 88,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 4,
+        "line": 6,
+      },
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`try/handle keyword Should parse 1`] = `
+Node {
+  "comments": Array [],
+  "end": 100,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 4,
+      "line": 9,
+    },
+    "start": Position {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "async": false,
+        "body": Node {
+          "body": Array [
+            Node {
+              "block": Node {
+                "body": Array [
+                  Node {
+                    "end": 54,
+                    "expression": Node {
+                      "arguments": Array [],
+                      "callee": Node {
+                        "end": 51,
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 14,
+                            "line": 4,
+                          },
+                          "identifierName": "main",
+                          "start": Position {
+                            "column": 10,
+                            "line": 4,
+                          },
+                        },
+                        "name": "main",
+                        "start": 47,
+                        "type": "Identifier",
+                      },
+                      "end": 53,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 16,
+                          "line": 4,
+                        },
+                        "start": Position {
+                          "column": 10,
+                          "line": 4,
+                        },
+                      },
+                      "start": 47,
+                      "type": "CallExpression",
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 17,
+                        "line": 4,
+                      },
+                      "start": Position {
+                        "column": 10,
+                        "line": 4,
+                      },
+                    },
+                    "start": 47,
+                    "type": "ExpressionStatement",
+                  },
+                ],
+                "directives": Array [],
+                "end": 64,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 9,
+                    "line": 5,
+                  },
+                  "start": Position {
+                    "column": 11,
+                    "line": 3,
+                  },
+                },
+                "start": 35,
+                "type": "BlockStatement",
+              },
+              "end": 87,
+              "finalizer": null,
+              "handler": Node {
+                "body": Node {
+                  "body": Array [],
+                  "directives": Array [],
+                  "end": 87,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 9,
+                      "line": 7,
+                    },
+                    "start": Position {
+                      "column": 20,
+                      "line": 5,
+                    },
+                  },
+                  "start": 75,
+                  "type": "BlockStatement",
+                },
+                "end": 87,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 9,
+                    "line": 7,
+                  },
+                  "start": Position {
+                    "column": 10,
+                    "line": 5,
+                  },
+                },
+                "param": Node {
+                  "end": 74,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 19,
+                      "line": 5,
+                    },
+                    "identifierName": "e",
+                    "start": Position {
+                      "column": 18,
+                      "line": 5,
+                    },
+                  },
+                  "name": "e",
+                  "start": 73,
+                  "type": "Identifier",
+                },
+                "start": 65,
+                "type": "HandleClause",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 9,
+                  "line": 7,
+                },
+                "start": Position {
+                  "column": 8,
+                  "line": 3,
+                },
+              },
+              "start": 32,
+              "type": "TryStatement",
+            },
+          ],
+          "directives": Array [],
+          "end": 95,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 7,
+              "line": 8,
+            },
+            "start": Position {
+              "column": 21,
+              "line": 2,
+            },
+          },
+          "start": 22,
+          "type": "BlockStatement",
+        },
+        "end": 95,
+        "generator": false,
+        "id": Node {
+          "end": 20,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 19,
+              "line": 2,
+            },
+            "identifierName": "main",
+            "start": Position {
+              "column": 15,
+              "line": 2,
+            },
+          },
+          "name": "main",
+          "start": 16,
+          "type": "Identifier",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 7,
+            "line": 8,
+          },
+          "start": Position {
+            "column": 6,
+            "line": 2,
+          },
+        },
+        "params": Array [],
+        "start": 7,
+        "type": "FunctionDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 100,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 4,
+        "line": 9,
+      },
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
