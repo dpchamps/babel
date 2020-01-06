@@ -29,12 +29,12 @@ describe("try/handle keyword", () => {
   });
 });
 
-describe("resume/with keywords", () => {
+describe("resume keyword", () => {
   it("Should parse", () => {
     const parser = getParserWithCode(`
       function handler(){
-        resume ({a : 'a'});
-        resume true;
+        recall ({a : 'a'});
+        recall true;
       }
     `);
 

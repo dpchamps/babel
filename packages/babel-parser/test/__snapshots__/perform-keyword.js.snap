@@ -158,7 +158,7 @@ Node {
 }
 `;
 
-exports[`resume/with keywords Should parse 1`] = `
+exports[`resume keyword Should parse 1`] = `
 Node {
   "comments": Array [],
   "end": 88,
@@ -269,7 +269,7 @@ Node {
                     "line": 3,
                   },
                 },
-                "operator": "resume",
+                "operator": "recall",
                 "prefix": true,
                 "start": 35,
                 "type": "UnaryExpression",
@@ -317,7 +317,7 @@ Node {
                     "line": 4,
                   },
                 },
-                "operator": "resume",
+                "operator": "recall",
                 "prefix": true,
                 "start": 63,
                 "type": "UnaryExpression",
