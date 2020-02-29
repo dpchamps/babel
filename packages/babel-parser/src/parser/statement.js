@@ -198,6 +198,14 @@ export default class StatementParser extends ExpressionParser {
         return this.parseThrowStatement(node);
       case tt._try:
         return this.parseTryStatement(node);
+      case tt.handle:
+        if (context !== "try") {
+          this.raise(
+            this.state.start,
+            "Received handle clause without a precedent try",
+          );
+        }
+        return this.parseHandleMatcher(node);
 
       case tt._const:
       case tt._var:
@@ -685,12 +693,7 @@ export default class StatementParser extends ExpressionParser {
 
       node.handler = this.finishNode(clause, "CatchClause");
     } else if (this.match(tt.handle)) {
-      const clause = parseCatchHandleClause();
-
-      clause.body = this.parseBlock(false, true);
-      this.scope.exit();
-
-      node.handler = this.finishNode(clause, "HandleClause");
+      this.parseHandleMatcher(node);
     }
 
     node.finalizer = this.eat(tt._finally) ? this.parseBlock() : null;
@@ -700,6 +703,49 @@ export default class StatementParser extends ExpressionParser {
     }
 
     return this.finishNode(node, "TryStatement");
+  }
+
+  parseHandleMatcher(node) {
+    this.next();
+    const parseHandleClause = () => {
+      const clause = this.startNode();
+
+      clause.effectMatcher = this.eat(tt._default)
+        ? null
+        : this.parseExpression();
+      clause.defaultMatcher = !clause.effectMatcher;
+
+      if (!this.eat(tt._with)) {
+        this.raise(node.start, "Missing with Clause for Handler Statement");
+      }
+
+      if (this.match(tt.parenL)) {
+        this.expect(tt.parenL);
+        clause.param = this.parseBindingAtom();
+        const simple = clause.param.type === "Identifier";
+        this.scope.enter(simple ? SCOPE_SIMPLE_CATCH : 0);
+        this.checkLVal(clause.param, BIND_LEXICAL, null, "catch clause");
+        this.expect(tt.parenR);
+      } else {
+        clause.param = null;
+        this.scope.enter(SCOPE_OTHER);
+      }
+
+      return clause;
+    };
+
+    const clause = parseHandleClause();
+
+    clause.body = this.parseBlock(false, true);
+    clause.alternate = this.match(tt.handle)
+      ? this.parseStatement("try")
+      : null;
+
+    this.scope.exit();
+
+    node.handler = this.finishNode(clause, "HandleClause");
+
+    return node;
   }
 
   parseVarStatement(
