@@ -78,6 +78,8 @@ export default class State {
   soloAwait: boolean = false;
   inFSharpPipelineDirectBody: boolean = false;
 
+  soloRecall: boolean = false;
+
   // Check whether we are in a (nested) class or not.
   classLevel: number = 0;
 

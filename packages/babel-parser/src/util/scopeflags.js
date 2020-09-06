@@ -2,17 +2,18 @@
 
 // Each scope gets a bitset that may contain these flags
 // prettier-ignore
-export const SCOPE_OTHER        = 0b0000000000,
-             SCOPE_PROGRAM      = 0b0000000001,
-             SCOPE_FUNCTION     = 0b0000000010,
-             SCOPE_ASYNC        = 0b0000000100,
-             SCOPE_GENERATOR    = 0b0000001000,
-             SCOPE_ARROW        = 0b0000010000,
-             SCOPE_SIMPLE_CATCH = 0b0000100000,
-             SCOPE_SUPER        = 0b0001000000,
-             SCOPE_DIRECT_SUPER = 0b0010000000,
-             SCOPE_CLASS        = 0b0100000000,
-             SCOPE_TS_MODULE    = 0b1000000000,
+export const SCOPE_OTHER        = 0b00000000000,
+             SCOPE_PROGRAM      = 0b00000000001,
+             SCOPE_FUNCTION     = 0b00000000010,
+             SCOPE_ASYNC        = 0b00000000100,
+             SCOPE_GENERATOR    = 0b00000001000,
+             SCOPE_ARROW        = 0b00000010000,
+             SCOPE_SIMPLE_CATCH = 0b00000100000,
+             SCOPE_SUPER        = 0b00001000000,
+             SCOPE_DIRECT_SUPER = 0b00010000000,
+             SCOPE_CLASS        = 0b00100000000,
+             SCOPE_TS_MODULE    = 0b01000000000,
+             SCOPE_EFFECT    = 0b10000000000,
              SCOPE_VAR = SCOPE_PROGRAM | SCOPE_FUNCTION | SCOPE_TS_MODULE;
 
 export type ScopeFlags =
@@ -26,13 +27,19 @@ export type ScopeFlags =
   | typeof SCOPE_SIMPLE_CATCH
   | typeof SCOPE_SUPER
   | typeof SCOPE_DIRECT_SUPER
-  | typeof SCOPE_CLASS;
+  | typeof SCOPE_CLASS
+  | typeof SCOPE_EFFECT;
 
-export function functionFlags(isAsync: boolean, isGenerator: boolean) {
+export function functionFlags(
+  isAsync: boolean,
+  isGenerator: boolean,
+  isEffect: boolean,
+) {
   return (
     SCOPE_FUNCTION |
     (isAsync ? SCOPE_ASYNC : 0) |
-    (isGenerator ? SCOPE_GENERATOR : 0)
+    (isGenerator ? SCOPE_GENERATOR : 0) |
+    (isEffect ? SCOPE_EFFECT : 0)
   );
 }
 
