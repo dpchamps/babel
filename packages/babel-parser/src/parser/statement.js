@@ -21,6 +21,7 @@ import {
   SCOPE_SIMPLE_CATCH,
   SCOPE_SUPER,
   type BindingTypes,
+  SCOPE_ARROW,
 } from "../util/scopeflags";
 
 const loopLabel = { kind: "loop" },
@@ -199,13 +200,7 @@ export default class StatementParser extends ExpressionParser {
       case tt._try:
         return this.parseTryStatement(node);
       case tt.handle:
-        if (context !== "try") {
-          this.raise(
-            this.state.start,
-            "Received handle clause without a precedent try",
-          );
-        }
-        return this.parseHandleMatcher(node);
+        return this.parseHandlerBlock(node);
 
       case tt._const:
       case tt._var:
@@ -705,45 +700,23 @@ export default class StatementParser extends ExpressionParser {
     return this.finishNode(node, "TryStatement");
   }
 
-  parseHandleMatcher(node) {
+  parseHandlerBlock(node) {
     this.next();
-    const parseHandleClause = () => {
-      const clause = this.startNode();
-
-      clause.effectMatcher = this.eat(tt._default)
-        ? null
-        : this.parseExpression();
-      clause.defaultMatcher = !clause.effectMatcher;
-
-      if (!this.eat(tt._with)) {
-        this.raise(node.start, "Missing with Clause for Handler Statement");
-      }
-
-      if (this.match(tt.parenL)) {
-        this.expect(tt.parenL);
-        clause.param = this.parseBindingAtom();
-        const simple = clause.param.type === "Identifier";
-        this.scope.enter(simple ? SCOPE_SIMPLE_CATCH : 0);
-        this.checkLVal(clause.param, BIND_LEXICAL, null, "catch clause");
-        this.expect(tt.parenR);
-      } else {
-        clause.param = null;
-        this.scope.enter(SCOPE_OTHER);
-      }
-
-      return clause;
-    };
-
-    const clause = parseHandleClause();
-
-    clause.body = this.parseBlock(false, true);
-    clause.alternate = this.match(tt.handle)
-      ? this.parseStatement("try")
+    this.scope.enter(functionFlags(false, false) | SCOPE_ARROW);
+    node.effects = this.eat(tt.parenL)
+      ? this.parseBindingList(
+          tt.parenR,
+          charCodes.rightParenthesis,
+          true,
+          false,
+        )
       : null;
+
+    node.body = this.parseBlock(true, false);
 
     this.scope.exit();
 
-    node.handler = this.finishNode(clause, "HandleClause");
+    this.finishNode(node, "EffectHandler");
 
     return node;
   }
@@ -1087,12 +1060,13 @@ export default class StatementParser extends ExpressionParser {
     node: T,
     statement?: number = FUNC_NO_FLAGS,
     isAsync?: boolean = false,
+    isEffect?: boolean = false,
   ): T {
     const isStatement = statement & FUNC_STATEMENT;
     const isHangingStatement = statement & FUNC_HANGING_STATEMENT;
     const requireId = !!isStatement && !(statement & FUNC_NULLABLE_ID);
 
-    this.initFunction(node, isAsync);
+    this.initFunction(node, isAsync, isEffect);
 
     if (this.match(tt.star) && isHangingStatement) {
       this.raise(
@@ -1114,7 +1088,7 @@ export default class StatementParser extends ExpressionParser {
     this.state.inClassProperty = false;
     this.state.yieldPos = -1;
     this.state.awaitPos = -1;
-    this.scope.enter(functionFlags(node.async, node.generator));
+    this.scope.enter(functionFlags(node.async, node.generator, node.effect));
 
     if (!isStatement) {
       node.id = this.parseFunctionId();

@@ -1,5 +1,1113 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`effect / recall keyword Should parse a function statement as an effect 1`] = `
+Node {
+  "comments": Array [],
+  "end": 127,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 4,
+      "line": 9,
+    },
+    "start": Position {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "end": 57,
+        "expression": Node {
+          "async": false,
+          "body": Node {
+            "body": Array [
+              Node {
+                "end": 49,
+                "expression": Node {
+                  "argument": Node {
+                    "end": 48,
+                    "extra": Object {
+                      "raw": "\\"Hi\\"",
+                      "rawValue": "Hi",
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 19,
+                        "line": 3,
+                      },
+                      "start": Position {
+                        "column": 15,
+                        "line": 3,
+                      },
+                    },
+                    "start": 44,
+                    "type": "StringLiteral",
+                    "value": "Hi",
+                  },
+                  "end": 48,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 19,
+                      "line": 3,
+                    },
+                    "start": Position {
+                      "column": 8,
+                      "line": 3,
+                    },
+                  },
+                  "start": 37,
+                  "type": "RecallExpression",
+                },
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 20,
+                    "line": 3,
+                  },
+                  "start": Position {
+                    "column": 8,
+                    "line": 3,
+                  },
+                },
+                "start": 37,
+                "type": "ExpressionStatement",
+              },
+            ],
+            "directives": Array [],
+            "end": 57,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 7,
+                "line": 4,
+              },
+              "start": Position {
+                "column": 26,
+                "line": 2,
+              },
+            },
+            "start": 27,
+            "type": "BlockStatement",
+          },
+          "effect": true,
+          "end": 57,
+          "generator": false,
+          "id": Node {
+            "end": 24,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 23,
+                "line": 2,
+              },
+              "identifierName": "A",
+              "start": Position {
+                "column": 22,
+                "line": 2,
+              },
+            },
+            "name": "A",
+            "start": 23,
+            "type": "Identifier",
+          },
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 7,
+              "line": 4,
+            },
+            "start": Position {
+              "column": 6,
+              "line": 2,
+            },
+          },
+          "params": Array [],
+          "start": 7,
+          "type": "FunctionExpression",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 7,
+            "line": 4,
+          },
+          "start": Position {
+            "column": 6,
+            "line": 2,
+          },
+        },
+        "start": 7,
+        "type": "ExpressionStatement",
+      },
+      Node {
+        "declarations": Array [
+          Node {
+            "end": 122,
+            "id": Node {
+              "end": 72,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 13,
+                  "line": 6,
+                },
+                "identifierName": "B",
+                "start": Position {
+                  "column": 12,
+                  "line": 6,
+                },
+              },
+              "name": "B",
+              "start": 71,
+              "type": "Identifier",
+            },
+            "init": Node {
+              "async": false,
+              "body": Node {
+                "body": Array [
+                  Node {
+                    "end": 114,
+                    "expression": Node {
+                      "argument": Node {
+                        "end": 113,
+                        "extra": Object {
+                          "raw": "\\"Yo\\"",
+                          "rawValue": "Yo",
+                        },
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 19,
+                            "line": 7,
+                          },
+                          "start": Position {
+                            "column": 15,
+                            "line": 7,
+                          },
+                        },
+                        "start": 109,
+                        "type": "StringLiteral",
+                        "value": "Yo",
+                      },
+                      "end": 113,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 19,
+                          "line": 7,
+                        },
+                        "start": Position {
+                          "column": 8,
+                          "line": 7,
+                        },
+                      },
+                      "start": 102,
+                      "type": "RecallExpression",
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 20,
+                        "line": 7,
+                      },
+                      "start": Position {
+                        "column": 8,
+                        "line": 7,
+                      },
+                    },
+                    "start": 102,
+                    "type": "ExpressionStatement",
+                  },
+                ],
+                "directives": Array [],
+                "end": 122,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 7,
+                    "line": 8,
+                  },
+                  "start": Position {
+                    "column": 33,
+                    "line": 6,
+                  },
+                },
+                "start": 92,
+                "type": "BlockStatement",
+              },
+              "effect": true,
+              "end": 122,
+              "generator": false,
+              "id": null,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 7,
+                  "line": 8,
+                },
+                "start": Position {
+                  "column": 16,
+                  "line": 6,
+                },
+              },
+              "params": Array [],
+              "start": 75,
+              "type": "FunctionExpression",
+            },
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 7,
+                "line": 8,
+              },
+              "start": Position {
+                "column": 12,
+                "line": 6,
+              },
+            },
+            "start": 71,
+            "type": "VariableDeclarator",
+          },
+        ],
+        "end": 122,
+        "kind": "const",
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 7,
+            "line": 8,
+          },
+          "start": Position {
+            "column": 6,
+            "line": 6,
+          },
+        },
+        "start": 65,
+        "type": "VariableDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 127,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 4,
+        "line": 9,
+      },
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`effect / recall keyword Should parse a handle keyword 1`] = `
+Node {
+  "comments": Array [],
+  "end": 49,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 3,
+      "line": 5,
+    },
+    "start": Position {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "declarations": Array [
+          Node {
+            "end": 45,
+            "id": Node {
+              "end": 16,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 15,
+                  "line": 2,
+                },
+                "identifierName": "y",
+                "start": Position {
+                  "column": 14,
+                  "line": 2,
+                },
+              },
+              "name": "y",
+              "start": 15,
+              "type": "Identifier",
+            },
+            "init": Node {
+              "async": false,
+              "body": Node {
+                "body": Array [],
+                "directives": Array [],
+                "end": 45,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 9,
+                    "line": 4,
+                  },
+                  "start": Position {
+                    "column": 32,
+                    "line": 2,
+                  },
+                },
+                "start": 33,
+                "type": "BlockStatement",
+              },
+              "effect": true,
+              "end": 45,
+              "generator": false,
+              "id": null,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 9,
+                  "line": 4,
+                },
+                "start": Position {
+                  "column": 18,
+                  "line": 2,
+                },
+              },
+              "params": Array [
+                Node {
+                  "end": 28,
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 27,
+                      "line": 2,
+                    },
+                    "identifierName": "x",
+                    "start": Position {
+                      "column": 26,
+                      "line": 2,
+                    },
+                  },
+                  "name": "x",
+                  "start": 27,
+                  "type": "Identifier",
+                },
+              ],
+              "start": 19,
+              "type": "ArrowFunctionExpression",
+            },
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 9,
+                "line": 4,
+              },
+              "start": Position {
+                "column": 14,
+                "line": 2,
+              },
+            },
+            "start": 15,
+            "type": "VariableDeclarator",
+          },
+        ],
+        "end": 45,
+        "kind": "const",
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 9,
+            "line": 4,
+          },
+          "start": Position {
+            "column": 8,
+            "line": 2,
+          },
+        },
+        "start": 9,
+        "type": "VariableDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 49,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 3,
+        "line": 5,
+      },
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`effect / recall keyword Should parse a recall keyword within the scope of an effect 1`] = `
+Node {
+  "comments": Array [],
+  "end": 67,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 4,
+      "line": 5,
+    },
+    "start": Position {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "declarations": Array [
+          Node {
+            "end": 62,
+            "id": Node {
+              "end": 14,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 13,
+                  "line": 2,
+                },
+                "identifierName": "z",
+                "start": Position {
+                  "column": 12,
+                  "line": 2,
+                },
+              },
+              "name": "z",
+              "start": 13,
+              "type": "Identifier",
+            },
+            "init": Node {
+              "async": false,
+              "body": Node {
+                "body": Array [
+                  Node {
+                    "end": 54,
+                    "expression": Node {
+                      "argument": Node {
+                        "end": 54,
+                        "extra": Object {
+                          "raw": "\\"Hello\\"",
+                          "rawValue": "Hello",
+                        },
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 22,
+                            "line": 3,
+                          },
+                          "start": Position {
+                            "column": 15,
+                            "line": 3,
+                          },
+                        },
+                        "start": 47,
+                        "type": "StringLiteral",
+                        "value": "Hello",
+                      },
+                      "end": 54,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 22,
+                          "line": 3,
+                        },
+                        "start": Position {
+                          "column": 8,
+                          "line": 3,
+                        },
+                      },
+                      "start": 40,
+                      "type": "RecallExpression",
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 22,
+                        "line": 3,
+                      },
+                      "start": Position {
+                        "column": 8,
+                        "line": 3,
+                      },
+                    },
+                    "start": 40,
+                    "type": "ExpressionStatement",
+                  },
+                ],
+                "directives": Array [],
+                "end": 62,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 7,
+                    "line": 4,
+                  },
+                  "start": Position {
+                    "column": 29,
+                    "line": 2,
+                  },
+                },
+                "start": 30,
+                "type": "BlockStatement",
+              },
+              "effect": true,
+              "end": 62,
+              "generator": false,
+              "id": null,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 7,
+                  "line": 4,
+                },
+                "start": Position {
+                  "column": 16,
+                  "line": 2,
+                },
+              },
+              "params": Array [],
+              "start": 17,
+              "type": "ArrowFunctionExpression",
+            },
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 7,
+                "line": 4,
+              },
+              "start": Position {
+                "column": 12,
+                "line": 2,
+              },
+            },
+            "start": 13,
+            "type": "VariableDeclarator",
+          },
+        ],
+        "end": 62,
+        "kind": "const",
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 7,
+            "line": 4,
+          },
+          "start": Position {
+            "column": 6,
+            "line": 2,
+          },
+        },
+        "start": 7,
+        "type": "VariableDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 67,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 4,
+        "line": 5,
+      },
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`handle keyword Should parse a handle block 1`] = `
+Node {
+  "comments": Array [],
+  "end": 53,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 4,
+      "line": 5,
+    },
+    "start": Position {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "body": Node {
+          "body": Array [
+            Node {
+              "declarations": Array [
+                Node {
+                  "end": 39,
+                  "id": Node {
+                    "end": 35,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 15,
+                        "line": 3,
+                      },
+                      "identifierName": "x",
+                      "start": Position {
+                        "column": 14,
+                        "line": 3,
+                      },
+                    },
+                    "name": "x",
+                    "start": 34,
+                    "type": "Identifier",
+                  },
+                  "init": Node {
+                    "end": 39,
+                    "extra": Object {
+                      "raw": "0",
+                      "rawValue": 0,
+                    },
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 19,
+                        "line": 3,
+                      },
+                      "start": Position {
+                        "column": 18,
+                        "line": 3,
+                      },
+                    },
+                    "start": 38,
+                    "type": "NumericLiteral",
+                    "value": 0,
+                  },
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 19,
+                      "line": 3,
+                    },
+                    "start": Position {
+                      "column": 14,
+                      "line": 3,
+                    },
+                  },
+                  "start": 34,
+                  "type": "VariableDeclarator",
+                },
+              ],
+              "end": 40,
+              "kind": "const",
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 20,
+                  "line": 3,
+                },
+                "start": Position {
+                  "column": 8,
+                  "line": 3,
+                },
+              },
+              "start": 28,
+              "type": "VariableDeclaration",
+            },
+          ],
+          "directives": Array [],
+          "end": 48,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 7,
+              "line": 4,
+            },
+            "start": Position {
+              "column": 17,
+              "line": 2,
+            },
+          },
+          "start": 18,
+          "type": "BlockStatement",
+        },
+        "effects": Array [
+          Node {
+            "end": 16,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 15,
+                "line": 2,
+              },
+              "identifierName": "A",
+              "start": Position {
+                "column": 14,
+                "line": 2,
+              },
+            },
+            "name": "A",
+            "start": 15,
+            "type": "Identifier",
+          },
+        ],
+        "end": 48,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 7,
+            "line": 4,
+          },
+          "start": Position {
+            "column": 6,
+            "line": 2,
+          },
+        },
+        "start": 7,
+        "type": "EffectHandler",
+      },
+    ],
+    "directives": Array [],
+    "end": 53,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 4,
+        "line": 5,
+      },
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`handle keyword Should parse a handle block as expression 1`] = `
+Node {
+  "comments": Array [],
+  "end": 69,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 4,
+      "line": 5,
+    },
+    "start": Position {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "declarations": Array [
+          Node {
+            "end": 63,
+            "id": Node {
+              "end": 16,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 15,
+                  "line": 2,
+                },
+                "identifierName": "f",
+                "start": Position {
+                  "column": 14,
+                  "line": 2,
+                },
+              },
+              "name": "f",
+              "start": 15,
+              "type": "Identifier",
+            },
+            "init": Node {
+              "body": Node {
+                "body": Array [
+                  Node {
+                    "argument": Node {
+                      "end": 52,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 21,
+                          "line": 3,
+                        },
+                        "start": Position {
+                          "column": 17,
+                          "line": 3,
+                        },
+                      },
+                      "start": 48,
+                      "type": "NullLiteral",
+                    },
+                    "end": 53,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 22,
+                        "line": 3,
+                      },
+                      "start": Position {
+                        "column": 10,
+                        "line": 3,
+                      },
+                    },
+                    "start": 41,
+                    "type": "ReturnStatement",
+                  },
+                ],
+                "directives": Array [],
+                "end": 63,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 9,
+                    "line": 4,
+                  },
+                  "start": Position {
+                    "column": 28,
+                    "line": 2,
+                  },
+                },
+                "start": 29,
+                "type": "BlockStatement",
+              },
+              "effects": Array [],
+              "end": 63,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 9,
+                  "line": 4,
+                },
+                "start": Position {
+                  "column": 18,
+                  "line": 2,
+                },
+              },
+              "start": 19,
+              "type": "EffectHandler",
+            },
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 9,
+                "line": 4,
+              },
+              "start": Position {
+                "column": 14,
+                "line": 2,
+              },
+            },
+            "start": 15,
+            "type": "VariableDeclarator",
+          },
+        ],
+        "end": 64,
+        "kind": "const",
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 10,
+            "line": 4,
+          },
+          "start": Position {
+            "column": 8,
+            "line": 2,
+          },
+        },
+        "start": 9,
+        "type": "VariableDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 69,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 4,
+        "line": 5,
+      },
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`handle keyword Should parse a nested handle block 1`] = `
+Node {
+  "comments": Array [],
+  "end": 88,
+  "errors": Array [],
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 4,
+      "line": 7,
+    },
+    "start": Position {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "declarations": Array [
+          Node {
+            "end": 82,
+            "id": Node {
+              "end": 16,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 15,
+                  "line": 2,
+                },
+                "identifierName": "f",
+                "start": Position {
+                  "column": 14,
+                  "line": 2,
+                },
+              },
+              "name": "f",
+              "start": 15,
+              "type": "Identifier",
+            },
+            "init": Node {
+              "body": Node {
+                "body": Array [
+                  Node {
+                    "argument": Node {
+                      "body": Node {
+                        "body": Array [],
+                        "directives": Array [],
+                        "end": 72,
+                        "loc": SourceLocation {
+                          "end": Position {
+                            "column": 11,
+                            "line": 5,
+                          },
+                          "start": Position {
+                            "column": 27,
+                            "line": 3,
+                          },
+                        },
+                        "start": 58,
+                        "type": "BlockStatement",
+                      },
+                      "effects": Array [],
+                      "end": 72,
+                      "loc": SourceLocation {
+                        "end": Position {
+                          "column": 11,
+                          "line": 5,
+                        },
+                        "start": Position {
+                          "column": 17,
+                          "line": 3,
+                        },
+                      },
+                      "start": 48,
+                      "type": "EffectHandler",
+                    },
+                    "end": 72,
+                    "loc": SourceLocation {
+                      "end": Position {
+                        "column": 11,
+                        "line": 5,
+                      },
+                      "start": Position {
+                        "column": 10,
+                        "line": 3,
+                      },
+                    },
+                    "start": 41,
+                    "type": "ReturnStatement",
+                  },
+                ],
+                "directives": Array [],
+                "end": 82,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 9,
+                    "line": 6,
+                  },
+                  "start": Position {
+                    "column": 28,
+                    "line": 2,
+                  },
+                },
+                "start": 29,
+                "type": "BlockStatement",
+              },
+              "effects": Array [],
+              "end": 82,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 9,
+                  "line": 6,
+                },
+                "start": Position {
+                  "column": 18,
+                  "line": 2,
+                },
+              },
+              "start": 19,
+              "type": "EffectHandler",
+            },
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 9,
+                "line": 6,
+              },
+              "start": Position {
+                "column": 14,
+                "line": 2,
+              },
+            },
+            "start": 15,
+            "type": "VariableDeclarator",
+          },
+        ],
+        "end": 83,
+        "kind": "const",
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 10,
+            "line": 6,
+          },
+          "start": Position {
+            "column": 8,
+            "line": 2,
+          },
+        },
+        "start": 9,
+        "type": "VariableDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 88,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 4,
+        "line": 7,
+      },
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
 exports[`perform keyword Should parse 1`] = `
 Node {
   "comments": Array [],
@@ -102,6 +1210,7 @@ Node {
           "start": 22,
           "type": "BlockStatement",
         },
+        "effect": false,
         "end": 57,
         "generator": false,
         "id": Node {
@@ -143,1047 +1252,6 @@ Node {
       "end": Position {
         "column": 4,
         "line": 5,
-      },
-      "start": Position {
-        "column": 0,
-        "line": 1,
-      },
-    },
-    "sourceType": "module",
-    "start": 0,
-    "type": "Program",
-  },
-  "start": 0,
-  "type": "File",
-}
-`;
-
-exports[`resume keyword Should parse 1`] = `
-Node {
-  "comments": Array [],
-  "end": 88,
-  "errors": Array [],
-  "loc": SourceLocation {
-    "end": Position {
-      "column": 4,
-      "line": 6,
-    },
-    "start": Position {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "program": Node {
-    "body": Array [
-      Node {
-        "async": false,
-        "body": Node {
-          "body": Array [
-            Node {
-              "end": 54,
-              "expression": Node {
-                "argument": Node {
-                  "end": 52,
-                  "extra": Object {
-                    "parenStart": 42,
-                    "parenthesized": true,
-                  },
-                  "loc": SourceLocation {
-                    "end": Position {
-                      "column": 25,
-                      "line": 3,
-                    },
-                    "start": Position {
-                      "column": 16,
-                      "line": 3,
-                    },
-                  },
-                  "properties": Array [
-                    Node {
-                      "computed": false,
-                      "end": 51,
-                      "key": Node {
-                        "end": 45,
-                        "loc": SourceLocation {
-                          "end": Position {
-                            "column": 18,
-                            "line": 3,
-                          },
-                          "identifierName": "a",
-                          "start": Position {
-                            "column": 17,
-                            "line": 3,
-                          },
-                        },
-                        "name": "a",
-                        "start": 44,
-                        "type": "Identifier",
-                      },
-                      "loc": SourceLocation {
-                        "end": Position {
-                          "column": 24,
-                          "line": 3,
-                        },
-                        "start": Position {
-                          "column": 17,
-                          "line": 3,
-                        },
-                      },
-                      "method": false,
-                      "shorthand": false,
-                      "start": 44,
-                      "type": "ObjectProperty",
-                      "value": Node {
-                        "end": 51,
-                        "extra": Object {
-                          "raw": "'a'",
-                          "rawValue": "a",
-                        },
-                        "loc": SourceLocation {
-                          "end": Position {
-                            "column": 24,
-                            "line": 3,
-                          },
-                          "start": Position {
-                            "column": 21,
-                            "line": 3,
-                          },
-                        },
-                        "start": 48,
-                        "type": "StringLiteral",
-                        "value": "a",
-                      },
-                    },
-                  ],
-                  "start": 43,
-                  "type": "ObjectExpression",
-                },
-                "end": 53,
-                "loc": SourceLocation {
-                  "end": Position {
-                    "column": 26,
-                    "line": 3,
-                  },
-                  "start": Position {
-                    "column": 8,
-                    "line": 3,
-                  },
-                },
-                "operator": "recall",
-                "prefix": true,
-                "start": 35,
-                "type": "UnaryExpression",
-              },
-              "loc": SourceLocation {
-                "end": Position {
-                  "column": 27,
-                  "line": 3,
-                },
-                "start": Position {
-                  "column": 8,
-                  "line": 3,
-                },
-              },
-              "start": 35,
-              "type": "ExpressionStatement",
-            },
-            Node {
-              "end": 75,
-              "expression": Node {
-                "argument": Node {
-                  "end": 74,
-                  "loc": SourceLocation {
-                    "end": Position {
-                      "column": 19,
-                      "line": 4,
-                    },
-                    "start": Position {
-                      "column": 15,
-                      "line": 4,
-                    },
-                  },
-                  "start": 70,
-                  "type": "BooleanLiteral",
-                  "value": true,
-                },
-                "end": 74,
-                "loc": SourceLocation {
-                  "end": Position {
-                    "column": 19,
-                    "line": 4,
-                  },
-                  "start": Position {
-                    "column": 8,
-                    "line": 4,
-                  },
-                },
-                "operator": "recall",
-                "prefix": true,
-                "start": 63,
-                "type": "UnaryExpression",
-              },
-              "loc": SourceLocation {
-                "end": Position {
-                  "column": 20,
-                  "line": 4,
-                },
-                "start": Position {
-                  "column": 8,
-                  "line": 4,
-                },
-              },
-              "start": 63,
-              "type": "ExpressionStatement",
-            },
-          ],
-          "directives": Array [],
-          "end": 83,
-          "loc": SourceLocation {
-            "end": Position {
-              "column": 7,
-              "line": 5,
-            },
-            "start": Position {
-              "column": 24,
-              "line": 2,
-            },
-          },
-          "start": 25,
-          "type": "BlockStatement",
-        },
-        "end": 83,
-        "generator": false,
-        "id": Node {
-          "end": 23,
-          "loc": SourceLocation {
-            "end": Position {
-              "column": 22,
-              "line": 2,
-            },
-            "identifierName": "handler",
-            "start": Position {
-              "column": 15,
-              "line": 2,
-            },
-          },
-          "name": "handler",
-          "start": 16,
-          "type": "Identifier",
-        },
-        "loc": SourceLocation {
-          "end": Position {
-            "column": 7,
-            "line": 5,
-          },
-          "start": Position {
-            "column": 6,
-            "line": 2,
-          },
-        },
-        "params": Array [],
-        "start": 7,
-        "type": "FunctionDeclaration",
-      },
-    ],
-    "directives": Array [],
-    "end": 88,
-    "interpreter": null,
-    "loc": SourceLocation {
-      "end": Position {
-        "column": 4,
-        "line": 6,
-      },
-      "start": Position {
-        "column": 0,
-        "line": 1,
-      },
-    },
-    "sourceType": "module",
-    "start": 0,
-    "type": "Program",
-  },
-  "start": 0,
-  "type": "File",
-}
-`;
-
-exports[`try/handle keyword Should parse a default handler case 1`] = `
-Node {
-  "comments": Array [],
-  "end": 121,
-  "errors": Array [],
-  "loc": SourceLocation {
-    "end": Position {
-      "column": 5,
-      "line": 10,
-    },
-    "start": Position {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "program": Node {
-    "body": Array [
-      Node {
-        "block": Node {
-          "body": Array [],
-          "directives": Array [],
-          "end": 16,
-          "loc": SourceLocation {
-            "end": Position {
-              "column": 5,
-              "line": 4,
-            },
-            "start": Position {
-              "column": 7,
-              "line": 2,
-            },
-          },
-          "start": 8,
-          "type": "BlockStatement",
-        },
-        "end": 121,
-        "finalizer": null,
-        "handler": Node {
-          "alternate": Node {
-            "end": 0,
-            "handler": Node {
-              "alternate": Node {
-                "end": 0,
-                "handler": Node {
-                  "alternate": null,
-                  "body": Node {
-                    "body": Array [],
-                    "directives": Array [],
-                    "end": 121,
-                    "loc": SourceLocation {
-                      "end": Position {
-                        "column": 5,
-                        "line": 10,
-                      },
-                      "start": Position {
-                        "column": 29,
-                        "line": 8,
-                      },
-                    },
-                    "start": 113,
-                    "type": "BlockStatement",
-                  },
-                  "defaultMatcher": true,
-                  "effectMatcher": null,
-                  "end": 121,
-                  "loc": SourceLocation {
-                    "end": Position {
-                      "column": 5,
-                      "line": 10,
-                    },
-                    "start": Position {
-                      "column": 13,
-                      "line": 8,
-                    },
-                  },
-                  "param": Node {
-                    "end": 112,
-                    "loc": SourceLocation {
-                      "end": Position {
-                        "column": 28,
-                        "line": 8,
-                      },
-                      "identifierName": "e",
-                      "start": Position {
-                        "column": 27,
-                        "line": 8,
-                      },
-                    },
-                    "name": "e",
-                    "start": 111,
-                    "type": "Identifier",
-                  },
-                  "start": 97,
-                  "type": "HandleClause",
-                },
-                "loc": SourceLocation {
-                  "end": undefined,
-                  "start": Position {
-                    "column": 6,
-                    "line": 8,
-                  },
-                },
-                "start": 90,
-                "type": "",
-              },
-              "body": Node {
-                "body": Array [],
-                "directives": Array [],
-                "end": 89,
-                "loc": SourceLocation {
-                  "end": Position {
-                    "column": 5,
-                    "line": 8,
-                  },
-                  "start": Position {
-                    "column": 38,
-                    "line": 6,
-                  },
-                },
-                "start": 81,
-                "type": "BlockStatement",
-              },
-              "defaultMatcher": false,
-              "effectMatcher": Node {
-                "arguments": Array [
-                  Node {
-                    "end": 71,
-                    "extra": Object {
-                      "raw": "'effect'",
-                      "rawValue": "effect",
-                    },
-                    "loc": SourceLocation {
-                      "end": Position {
-                        "column": 28,
-                        "line": 6,
-                      },
-                      "start": Position {
-                        "column": 20,
-                        "line": 6,
-                      },
-                    },
-                    "start": 63,
-                    "type": "StringLiteral",
-                    "value": "effect",
-                  },
-                ],
-                "callee": Node {
-                  "end": 62,
-                  "loc": SourceLocation {
-                    "end": Position {
-                      "column": 19,
-                      "line": 6,
-                    },
-                    "identifierName": "Symbol",
-                    "start": Position {
-                      "column": 13,
-                      "line": 6,
-                    },
-                  },
-                  "name": "Symbol",
-                  "start": 56,
-                  "type": "Identifier",
-                },
-                "end": 72,
-                "loc": SourceLocation {
-                  "end": Position {
-                    "column": 29,
-                    "line": 6,
-                  },
-                  "start": Position {
-                    "column": 13,
-                    "line": 6,
-                  },
-                },
-                "start": 56,
-                "type": "CallExpression",
-              },
-              "end": 121,
-              "loc": SourceLocation {
-                "end": Position {
-                  "column": 5,
-                  "line": 10,
-                },
-                "start": Position {
-                  "column": 13,
-                  "line": 6,
-                },
-              },
-              "param": Node {
-                "end": 80,
-                "loc": SourceLocation {
-                  "end": Position {
-                    "column": 37,
-                    "line": 6,
-                  },
-                  "identifierName": "e",
-                  "start": Position {
-                    "column": 36,
-                    "line": 6,
-                  },
-                },
-                "name": "e",
-                "start": 79,
-                "type": "Identifier",
-              },
-              "start": 56,
-              "type": "HandleClause",
-            },
-            "loc": SourceLocation {
-              "end": undefined,
-              "start": Position {
-                "column": 6,
-                "line": 6,
-              },
-            },
-            "start": 49,
-            "type": "",
-          },
-          "body": Node {
-            "body": Array [],
-            "directives": Array [],
-            "end": 48,
-            "loc": SourceLocation {
-              "end": Position {
-                "column": 5,
-                "line": 6,
-              },
-              "start": Position {
-                "column": 29,
-                "line": 4,
-              },
-            },
-            "start": 40,
-            "type": "BlockStatement",
-          },
-          "defaultMatcher": false,
-          "effectMatcher": Node {
-            "end": 30,
-            "loc": SourceLocation {
-              "end": Position {
-                "column": 19,
-                "line": 4,
-              },
-              "identifierName": "someVar",
-              "start": Position {
-                "column": 12,
-                "line": 4,
-              },
-            },
-            "name": "someVar",
-            "start": 23,
-            "type": "Identifier",
-          },
-          "end": 121,
-          "loc": SourceLocation {
-            "end": Position {
-              "column": 5,
-              "line": 10,
-            },
-            "start": Position {
-              "column": 12,
-              "line": 4,
-            },
-          },
-          "param": Node {
-            "end": 38,
-            "loc": SourceLocation {
-              "end": Position {
-                "column": 27,
-                "line": 4,
-              },
-              "identifierName": "e",
-              "start": Position {
-                "column": 26,
-                "line": 4,
-              },
-            },
-            "name": "e",
-            "start": 37,
-            "type": "Identifier",
-          },
-          "start": 23,
-          "type": "HandleClause",
-        },
-        "loc": SourceLocation {
-          "end": Position {
-            "column": 5,
-            "line": 10,
-          },
-          "start": Position {
-            "column": 4,
-            "line": 2,
-          },
-        },
-        "start": 5,
-        "type": "TryStatement",
-      },
-    ],
-    "directives": Array [],
-    "end": 121,
-    "interpreter": null,
-    "loc": SourceLocation {
-      "end": Position {
-        "column": 5,
-        "line": 10,
-      },
-      "start": Position {
-        "column": 0,
-        "line": 1,
-      },
-    },
-    "sourceType": "module",
-    "start": 0,
-    "type": "Program",
-  },
-  "start": 0,
-  "type": "File",
-}
-`;
-
-exports[`try/handle keyword Should parse alternate handler case  1`] = `
-Node {
-  "comments": Array [],
-  "end": 91,
-  "errors": Array [],
-  "loc": SourceLocation {
-    "end": Position {
-      "column": 5,
-      "line": 8,
-    },
-    "start": Position {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "program": Node {
-    "body": Array [
-      Node {
-        "block": Node {
-          "body": Array [],
-          "directives": Array [],
-          "end": 16,
-          "loc": SourceLocation {
-            "end": Position {
-              "column": 5,
-              "line": 4,
-            },
-            "start": Position {
-              "column": 7,
-              "line": 2,
-            },
-          },
-          "start": 8,
-          "type": "BlockStatement",
-        },
-        "end": 91,
-        "finalizer": null,
-        "handler": Node {
-          "alternate": Node {
-            "end": 0,
-            "handler": Node {
-              "alternate": null,
-              "body": Node {
-                "body": Array [],
-                "directives": Array [],
-                "end": 91,
-                "loc": SourceLocation {
-                  "end": Position {
-                    "column": 5,
-                    "line": 8,
-                  },
-                  "start": Position {
-                    "column": 36,
-                    "line": 6,
-                  },
-                },
-                "start": 83,
-                "type": "BlockStatement",
-              },
-              "defaultMatcher": false,
-              "effectMatcher": Node {
-                "end": 74,
-                "extra": Object {
-                  "raw": "'anotherEffect'",
-                  "rawValue": "anotherEffect",
-                },
-                "loc": SourceLocation {
-                  "end": Position {
-                    "column": 27,
-                    "line": 6,
-                  },
-                  "start": Position {
-                    "column": 12,
-                    "line": 6,
-                  },
-                },
-                "start": 59,
-                "type": "StringLiteral",
-                "value": "anotherEffect",
-              },
-              "end": 91,
-              "loc": SourceLocation {
-                "end": Position {
-                  "column": 5,
-                  "line": 8,
-                },
-                "start": Position {
-                  "column": 12,
-                  "line": 6,
-                },
-              },
-              "param": Node {
-                "end": 82,
-                "loc": SourceLocation {
-                  "end": Position {
-                    "column": 35,
-                    "line": 6,
-                  },
-                  "identifierName": "e",
-                  "start": Position {
-                    "column": 34,
-                    "line": 6,
-                  },
-                },
-                "name": "e",
-                "start": 81,
-                "type": "Identifier",
-              },
-              "start": 59,
-              "type": "HandleClause",
-            },
-            "loc": SourceLocation {
-              "end": undefined,
-              "start": Position {
-                "column": 5,
-                "line": 6,
-              },
-            },
-            "start": 52,
-            "type": "",
-          },
-          "body": Node {
-            "body": Array [],
-            "directives": Array [],
-            "end": 52,
-            "loc": SourceLocation {
-              "end": Position {
-                "column": 5,
-                "line": 6,
-              },
-              "start": Position {
-                "column": 33,
-                "line": 4,
-              },
-            },
-            "start": 44,
-            "type": "BlockStatement",
-          },
-          "defaultMatcher": false,
-          "effectMatcher": Node {
-            "end": 35,
-            "extra": Object {
-              "raw": "'someEffect'",
-              "rawValue": "someEffect",
-            },
-            "loc": SourceLocation {
-              "end": Position {
-                "column": 24,
-                "line": 4,
-              },
-              "start": Position {
-                "column": 12,
-                "line": 4,
-              },
-            },
-            "start": 23,
-            "type": "StringLiteral",
-            "value": "someEffect",
-          },
-          "end": 91,
-          "loc": SourceLocation {
-            "end": Position {
-              "column": 5,
-              "line": 8,
-            },
-            "start": Position {
-              "column": 12,
-              "line": 4,
-            },
-          },
-          "param": Node {
-            "end": 43,
-            "loc": SourceLocation {
-              "end": Position {
-                "column": 32,
-                "line": 4,
-              },
-              "identifierName": "e",
-              "start": Position {
-                "column": 31,
-                "line": 4,
-              },
-            },
-            "name": "e",
-            "start": 42,
-            "type": "Identifier",
-          },
-          "start": 23,
-          "type": "HandleClause",
-        },
-        "loc": SourceLocation {
-          "end": Position {
-            "column": 5,
-            "line": 8,
-          },
-          "start": Position {
-            "column": 4,
-            "line": 2,
-          },
-        },
-        "start": 5,
-        "type": "TryStatement",
-      },
-    ],
-    "directives": Array [],
-    "end": 91,
-    "interpreter": null,
-    "loc": SourceLocation {
-      "end": Position {
-        "column": 5,
-        "line": 8,
-      },
-      "start": Position {
-        "column": 0,
-        "line": 1,
-      },
-    },
-    "sourceType": "module",
-    "start": 0,
-    "type": "Program",
-  },
-  "start": 0,
-  "type": "File",
-}
-`;
-
-exports[`try/handle keyword Should parse basic handler case 1`] = `
-Node {
-  "comments": Array [],
-  "end": 118,
-  "errors": Array [],
-  "loc": SourceLocation {
-    "end": Position {
-      "column": 4,
-      "line": 9,
-    },
-    "start": Position {
-      "column": 0,
-      "line": 1,
-    },
-  },
-  "program": Node {
-    "body": Array [
-      Node {
-        "async": false,
-        "body": Node {
-          "body": Array [
-            Node {
-              "block": Node {
-                "body": Array [
-                  Node {
-                    "end": 54,
-                    "expression": Node {
-                      "arguments": Array [],
-                      "callee": Node {
-                        "end": 51,
-                        "loc": SourceLocation {
-                          "end": Position {
-                            "column": 14,
-                            "line": 4,
-                          },
-                          "identifierName": "main",
-                          "start": Position {
-                            "column": 10,
-                            "line": 4,
-                          },
-                        },
-                        "name": "main",
-                        "start": 47,
-                        "type": "Identifier",
-                      },
-                      "end": 53,
-                      "loc": SourceLocation {
-                        "end": Position {
-                          "column": 16,
-                          "line": 4,
-                        },
-                        "start": Position {
-                          "column": 10,
-                          "line": 4,
-                        },
-                      },
-                      "start": 47,
-                      "type": "CallExpression",
-                    },
-                    "loc": SourceLocation {
-                      "end": Position {
-                        "column": 17,
-                        "line": 4,
-                      },
-                      "start": Position {
-                        "column": 10,
-                        "line": 4,
-                      },
-                    },
-                    "start": 47,
-                    "type": "ExpressionStatement",
-                  },
-                ],
-                "directives": Array [],
-                "end": 64,
-                "loc": SourceLocation {
-                  "end": Position {
-                    "column": 9,
-                    "line": 5,
-                  },
-                  "start": Position {
-                    "column": 11,
-                    "line": 3,
-                  },
-                },
-                "start": 35,
-                "type": "BlockStatement",
-              },
-              "end": 105,
-              "finalizer": null,
-              "handler": Node {
-                "alternate": null,
-                "body": Node {
-                  "body": Array [],
-                  "directives": Array [],
-                  "end": 105,
-                  "loc": SourceLocation {
-                    "end": Position {
-                      "column": 9,
-                      "line": 7,
-                    },
-                    "start": Position {
-                      "column": 38,
-                      "line": 5,
-                    },
-                  },
-                  "start": 93,
-                  "type": "BlockStatement",
-                },
-                "defaultMatcher": false,
-                "effectMatcher": Node {
-                  "end": 84,
-                  "extra": Object {
-                    "raw": "'someEffect'",
-                    "rawValue": "someEffect",
-                  },
-                  "loc": SourceLocation {
-                    "end": Position {
-                      "column": 29,
-                      "line": 5,
-                    },
-                    "start": Position {
-                      "column": 17,
-                      "line": 5,
-                    },
-                  },
-                  "start": 72,
-                  "type": "StringLiteral",
-                  "value": "someEffect",
-                },
-                "end": 105,
-                "loc": SourceLocation {
-                  "end": Position {
-                    "column": 9,
-                    "line": 7,
-                  },
-                  "start": Position {
-                    "column": 17,
-                    "line": 5,
-                  },
-                },
-                "param": Node {
-                  "end": 92,
-                  "loc": SourceLocation {
-                    "end": Position {
-                      "column": 37,
-                      "line": 5,
-                    },
-                    "identifierName": "e",
-                    "start": Position {
-                      "column": 36,
-                      "line": 5,
-                    },
-                  },
-                  "name": "e",
-                  "start": 91,
-                  "type": "Identifier",
-                },
-                "start": 72,
-                "type": "HandleClause",
-              },
-              "loc": SourceLocation {
-                "end": Position {
-                  "column": 9,
-                  "line": 7,
-                },
-                "start": Position {
-                  "column": 8,
-                  "line": 3,
-                },
-              },
-              "start": 32,
-              "type": "TryStatement",
-            },
-          ],
-          "directives": Array [],
-          "end": 113,
-          "loc": SourceLocation {
-            "end": Position {
-              "column": 7,
-              "line": 8,
-            },
-            "start": Position {
-              "column": 21,
-              "line": 2,
-            },
-          },
-          "start": 22,
-          "type": "BlockStatement",
-        },
-        "end": 113,
-        "generator": false,
-        "id": Node {
-          "end": 20,
-          "loc": SourceLocation {
-            "end": Position {
-              "column": 19,
-              "line": 2,
-            },
-            "identifierName": "main",
-            "start": Position {
-              "column": 15,
-              "line": 2,
-            },
-          },
-          "name": "main",
-          "start": 16,
-          "type": "Identifier",
-        },
-        "loc": SourceLocation {
-          "end": Position {
-            "column": 7,
-            "line": 8,
-          },
-          "start": Position {
-            "column": 6,
-            "line": 2,
-          },
-        },
-        "params": Array [],
-        "start": 7,
-        "type": "FunctionDeclaration",
-      },
-    ],
-    "directives": Array [],
-    "end": 118,
-    "interpreter": null,
-    "loc": SourceLocation {
-      "end": Position {
-        "column": 4,
-        "line": 9,
       },
       "start": Position {
         "column": 0,

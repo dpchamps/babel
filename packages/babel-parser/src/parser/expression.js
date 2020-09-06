@@ -165,6 +165,16 @@ export default class ExpressionParser extends LValParser {
       }
     }
 
+    if (this.state.type === tt.handle) {
+      let left = this.parseHandlerBlock(this.startNode());
+
+      if (afterLeftParse) {
+        left = afterLeftParse.call(this, left, startPos, startLoc);
+      }
+
+      return left;
+    }
+
     let failOnShorthandAssign;
     if (refShorthandDefaultPos) {
       failOnShorthandAssign = false;
@@ -464,6 +474,8 @@ export default class ExpressionParser extends LValParser {
   parseMaybeUnary(refShorthandDefaultPos: ?Pos): N.Expression {
     if (this.isContextual("await") && this.isAwaitAllowed()) {
       return this.parseAwait();
+    } else if (this.isContextual("recall") && this.isRecallAllowed()) {
+      return this.parseRecall();
     } else if (this.state.type.prefix) {
       const node = this.startNode();
       const update = this.match(tt.incDec);
@@ -549,6 +561,7 @@ export default class ExpressionParser extends LValParser {
     const state = {
       optionalChainMember: false,
       maybeAsyncArrow: this.atPossibleAsync(base),
+      maybeEffectArrow: this.atPossibleEffect(base),
       stop: false,
     };
     do {
@@ -556,6 +569,7 @@ export default class ExpressionParser extends LValParser {
 
       // After parsing a subscript, this isn't "async" for sure.
       state.maybeAsyncArrow = false;
+      state.maybeEffectArrow = false;
     } while (!state.stop);
     return base;
   }
@@ -671,6 +685,17 @@ export default class ExpressionParser extends LValParser {
         this.checkYieldAwaitInDefaultParams();
         this.state.yieldPos = oldYieldPos;
         this.state.awaitPos = oldAwaitPos;
+      } else if (state.maybeEffectArrow && this.shouldParseAsyncArrow()) {
+        state.stop = true;
+
+        node = this.parseEffectArrowFromCallExpression(
+          this.startNodeAt(startPos, startLoc),
+          node,
+        );
+
+        this.checkYieldAwaitInDefaultParams();
+        this.state.yieldPos = oldYieldPos;
+        this.state.awaitPos = oldAwaitPos;
       } else {
         this.toReferencedListDeep(node.arguments);
 
@@ -752,6 +777,16 @@ export default class ExpressionParser extends LValParser {
       this.state.lastTokEnd === base.end &&
       !this.canInsertSemicolon() &&
       this.input.slice(base.start, base.end) === "async"
+    );
+  }
+
+  atPossibleEffect(base: N.Expression): boolean {
+    return (
+      base.type === "Identifier" &&
+      base.name === "effect" &&
+      this.state.lastTokEnd === base.end &&
+      !this.canInsertSemicolon() &&
+      this.input.slice(base.start, base.end) === "effect"
     );
   }
 
@@ -856,6 +891,21 @@ export default class ExpressionParser extends LValParser {
     return node;
   }
 
+  parseEffectArrowFromCallExpression(
+    node: N.ArrowFunctionExpression,
+    call: N.CallExpression,
+  ): N.ArrowFunctionExpression {
+    this.expect(tt.arrow);
+    this.parseArrowExpression(
+      node,
+      call.arguments,
+      false,
+      call.extra?.trailingComma,
+      true,
+    );
+    return node;
+  }
+
   // Parse a no-call expression (like argument of `new` or `::` operators).
 
   parseNoCallExpr(): N.Expression {
@@ -938,10 +988,11 @@ export default class ExpressionParser extends LValParser {
         node = this.startNode();
         const containsEsc = this.state.containsEsc;
         const id = this.parseIdentifier();
+        const isFunctionQualifier = ["async", "effect"].includes(id.name);
 
         if (
           !containsEsc &&
-          id.name === "async" &&
+          isFunctionQualifier &&
           this.match(tt._function) &&
           !this.canInsertSemicolon()
         ) {
@@ -959,18 +1010,29 @@ export default class ExpressionParser extends LValParser {
           this.state.context[last] = ct.functionExpression;
 
           this.next();
-          return this.parseFunction(node, undefined, true);
+          return this.parseFunction(
+            node,
+            undefined,
+            id.name === "async",
+            id.name === "effect",
+          );
         } else if (
           canBeArrow &&
           !containsEsc &&
-          id.name === "async" &&
+          isFunctionQualifier &&
           this.match(tt.name) &&
           !this.canInsertSemicolon()
         ) {
           const params = [this.parseIdentifier()];
           this.expect(tt.arrow);
           // let foo = async bar => {};
-          this.parseArrowExpression(node, params, true);
+          this.parseArrowExpression(
+            node,
+            params,
+            id.name === "async",
+            undefined,
+            id.name === "effect",
+          );
           return node;
         }
 
@@ -1807,10 +1869,15 @@ export default class ExpressionParser extends LValParser {
 
   // Initialize empty function node.
 
-  initFunction(node: N.BodilessFunctionOrMethodBase, isAsync: ?boolean): void {
+  initFunction(
+    node: N.BodilessFunctionOrMethodBase,
+    isAsync: ?boolean,
+    isEffect: ?boolean,
+  ): void {
     node.id = null;
     node.generator = false;
     node.async = !!isAsync;
+    node.effect = !!isEffect;
   }
 
   // Parse object or class method.
@@ -1857,9 +1924,10 @@ export default class ExpressionParser extends LValParser {
     params: ?(N.Expression[]),
     isAsync: boolean,
     trailingCommaPos: ?number,
+    isEffect: boolean = false,
   ): N.ArrowFunctionExpression {
-    this.scope.enter(functionFlags(isAsync, false) | SCOPE_ARROW);
-    this.initFunction(node, isAsync);
+    this.scope.enter(functionFlags(isAsync, false, isEffect) | SCOPE_ARROW);
+    this.initFunction(node, isAsync, isEffect);
 
     const oldMaybeInArrowParameters = this.state.maybeInArrowParameters;
     const oldYieldPos = this.state.yieldPos;
@@ -2223,6 +2291,10 @@ export default class ExpressionParser extends LValParser {
     return false;
   }
 
+  isRecallAllowed() {
+    return this.scope.inFunction && this.scope.inEffect;
+  }
+
   // Parses await expression inside async function.
 
   parseAwait(): N.AwaitExpression {
@@ -2273,6 +2345,27 @@ export default class ExpressionParser extends LValParser {
     }
 
     return this.finishNode(node, "AwaitExpression");
+  }
+
+  parseRecall() {
+    const node = this.startNode();
+
+    this.next();
+
+    if (this.state.inParameters) {
+      this.raise(
+        node.start,
+        "recall is not allowed in effect function parameters",
+      );
+    } else if (this.state.awaitPos === -1) {
+      this.state.awaitPos = node.start;
+    }
+
+    if (!this.state.soloRecall) {
+      node.argument = this.parseMaybeUnary();
+    }
+
+    return this.finishNode(node, "RecallExpression");
   }
 
   // Parses yield expression inside generator.

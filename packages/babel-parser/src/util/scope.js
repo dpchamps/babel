@@ -16,6 +16,7 @@ import {
   BIND_KIND_VALUE,
   type ScopeFlags,
   type BindingTypes,
+  SCOPE_EFFECT,
 } from "./scopeflags";
 import * as N from "../types";
 
@@ -57,6 +58,9 @@ export default class ScopeHandler<IScope: Scope = Scope> {
   }
   get inAsync() {
     return (this.currentVarScope().flags & SCOPE_ASYNC) > 0;
+  }
+  get inEffect() {
+    return (this.currentVarScope().flags & SCOPE_EFFECT) > 0;
   }
   get allowSuper() {
     return (this.currentThisScope().flags & SCOPE_SUPER) > 0;
